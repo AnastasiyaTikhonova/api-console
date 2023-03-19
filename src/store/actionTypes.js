@@ -1,0 +1,7 @@
+export const TYPES = {
+    LOGIN: 'LOGIN',
+    LOGOUT: 'LOGOUT',
+    SET_LOADING: 'SET_LOADING',
+    LOADER: 'LOADER',
+    SET_HISTORY_ITEM: 'SET_HISTORY_ITEM',
+}

@@ -1,0 +1,43 @@
+%font {
+	font-family: "Fira Sans";
+	font-style: normal;
+	font-weight: 400;
+}
+%inputForm {
+	box-sizing: border-box;
+	width: 460px;
+	height: 40px;
+	background: #ffffff;
+	border-radius: 5px;
+	padding: 5px 10px;
+	font-size: 18px;
+	line-height: 30px;
+	align-items: center;
+	letter-spacing: 0.1em;
+	color: #0d0d0d;
+	margin-bottom: 20px;
+}
+
+.input {
+	@extend %font;
+	@extend %inputForm;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+
+	&:hover {
+		border: 1px solid rgba(0, 0, 0, 0.4);
+		border-radius: 5px;
+	}
+	&:focus {
+		border: 2px solid rgba(0, 0, 0, 0.4);
+		outline: none;
+		border-radius: 7px;
+		box-shadow: 0px 0px 5px rgb(223, 223, 223);
+	}
+}
+
+.inputError {
+	@extend %font;
+	@extend %inputForm;
+	border: 1px solid #CF2C00;
+	box-shadow: 0px 0px 5px rgba(207, 44, 0, 0.5);
+}

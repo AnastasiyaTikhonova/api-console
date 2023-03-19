@@ -1,0 +1,35 @@
+.myInput, .myInputLabel .optionalLabel, .myInputLabel {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
+}
+
+.myInputLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  line-height: 20px;
+  color: #0d0d0d;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.myInputLabel .optionalLabel {
+  font-size: 12px;
+  line-height: 20px;
+  color: #999999;
+}
+
+.myInput {
+  box-sizing: border-box;
+  width: 460px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 18px;
+  line-height: 30px;
+  align-items: center;
+  letter-spacing: 0.1em;
+  color: #0d0d0d;
+}

@@ -1,0 +1,14 @@
+.btn {
+  height: 40px;
+  width: 110px;
+  background: linear-gradient(180deg, #45a6ff 0%, #0055fb 100%), #c4c4c4;
+  border-radius: 5px;
+  border: none;
+  margin-top: 20px;
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  color: #ffffff;
+}

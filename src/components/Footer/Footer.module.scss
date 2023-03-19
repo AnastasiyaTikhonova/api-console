@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+
+  .linkOnGithub {
+    font-family: "Fira Sans";
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+    color: #999999;
+    text-decoration: none;
+  }
+}

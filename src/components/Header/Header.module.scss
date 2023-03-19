@@ -1,0 +1,78 @@
+%headerFont {
+	font-family: "Fira Sans";
+	font-style: normal;
+	font-weight: 400;
+	color: #0d0d0d;
+}
+
+.container {
+	display: flex;
+	height: 50px;
+	width: 100%;
+	background-color: #f6f6f6;
+
+	.titleContainer {
+		display: flex;
+		justify-content: flex-start;
+
+		.logo {
+			width: 115px;
+			height: 30px;
+			margin: 10px 20px 10px 15px;
+		}
+
+		h1 {
+			@extend %headerFont;
+			font-size: 24px;
+			line-height: 30px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+	}
+
+	.authContainer {
+		display: flex;
+		justify-content: flex-end;
+		flex-grow: 1;
+
+		.authInfo {
+			@extend %headerFont;
+			border-radius: 5px;
+			border: 2px solid rgba(0, 0, 0, 0.2);
+			margin-top: 10px;
+			margin-bottom: 10px;
+			padding: 5px 15px;
+			font-size: 16px;
+			line-height: 20px;
+			display: flex;
+			align-items: center;
+		}
+		.logout {
+			@extend %headerFont;
+			font-size: 16px;
+			line-height: 20px;
+			color: #0d0d0d;
+			background-color: #f6f6f6;
+			border: none;
+			margin-left: 30px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			min-width: 80px;
+			margin-right: 30px;
+			cursor: pointer;
+		}
+	}
+	.imgChangeScreenSize {
+		width: 18px;
+		height: 18px;
+		margin: 16px 15px 16px 0px;
+		cursor: pointer;
+	}
+}
+.dividingLine {
+	height: 1px;
+	background: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+}

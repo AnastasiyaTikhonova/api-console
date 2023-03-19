@@ -1,0 +1,28 @@
+.requestField {
+  display: inline-block;
+  width: 50%;
+  flex-direction: column;
+
+  .label {
+    font-family: "Fira Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: #999999;
+    margin-top: 10px;
+  }
+
+  .textArea {
+    font-family: "Fira Code";
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(100% - 20px);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    outline: none;
+    resize: none;
+    pointer-events: none;
+    padding: 10px;
+  }
+}

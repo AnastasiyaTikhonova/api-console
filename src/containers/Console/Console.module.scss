@@ -1,0 +1,21 @@
+.consoleWrapper {
+  display: flex;
+  flex-direction: column;
+
+  .dragElement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+
+    svg {
+      width: 10px;
+      &:hover {
+        cursor: pointer;
+      }
+      &:active {
+        cursor: col-resize;
+      }
+    }
+  }
+}
