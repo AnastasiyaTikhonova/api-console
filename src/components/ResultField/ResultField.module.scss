@@ -1,8 +1,7 @@
-.requestField {
+.resultField {
   display: inline-block;
   width: 50%;
   flex-direction: column;
-
   .label {
     font-family: "Fira Sans";
     font-style: normal;
@@ -24,5 +23,15 @@
     resize: none;
     pointer-events: none;
     padding: 10px;
+  }
+}
+
+.resultFieldError {
+  .label {
+    color: red;
+  }
+
+  .textArea {
+    border: 1px solid rgba(255, 0, 0, 100);
   }
 }

@@ -4,3 +4,4 @@ export const getSubLogin = (state) => state.authReducer.sublogin
 export const getLoadingStatus = (state) => state.authReducer.isLoading
 export const getLoaderStatus = (state) => state.authReducer.loader
 export const getHistoryItems = (state) => state.consoleReducer.historyItems
+export const getSessionId = (state) => state.authReducer.sessionId

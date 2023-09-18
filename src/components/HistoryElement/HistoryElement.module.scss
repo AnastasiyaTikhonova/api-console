@@ -7,36 +7,65 @@
   border-radius: 5px;
   height: 30px;
   margin-left: 10px;
-  //position: static;
 
-  .elementName {
+  .elementNameContainer {
     margin-left: 5px;
+    margin-right: 7px;
+    height: 30px;
+
+    .elementName {
+      font-family: "Fira Sans";
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+
+    .elementCopied {
+      font-family: "Fira Sans";
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: 0em;
+      text-align: left;
+      border-radius: 5px;
+      padding: 0px 5px 0px 5px;
+      background-color: rgba(246, 246, 246, 1);
+      position: relative;
+      text-align: center;
+      top: -19px;
+      transition-property: top, opacity;
+      transition-duration: 2s;
+      transition-delay: 1s;
+
+      //&_transition {
+      //  top: -45px;
+      //  opacity: 0.5;
+      //}
+
+    }
   }
 
-  .dragElement {
-    margin-left: 11px;
-  }
+  .dropdownComponent {
+    position: static!important;
 
-  .dropDown {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    background: #FFFFFF;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 3px;
-    z-index: 10;
-    min-width: 130px;
-    top: 95px;
-    margin-right: 0px;
+    .action:hover {
+      background: rgba(0, 85, 251, 1);
+      color: white;
+    }
+    .delete:hover {
+      background: rgba(207, 44, 0, 1);
+      color: white;
+    }
+  }
 
     a {
       text-decoration: none;
-      padding: 15px 0 15px 15px;
       color: #0D0D0D;
       font-family: "Fira Sans";
       font-style: normal;
       font-weight: 400;
       font-size: 16px;
     }
-  }
 }

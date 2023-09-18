@@ -3,9 +3,9 @@ import cl from './FormateButton.module.scss'
 
 import { Formate } from '../../icons/Formate/Formate'
 
-const FormateButton = () => {
+const FormateButton = ({ ...props }) => {
     return (
-        <button className={cl.formateButton}>
+        <button {...props} className={cl.formateButton}>
             <Formate />
             <span className={cl.title}>Форматировать</span>
         </button>

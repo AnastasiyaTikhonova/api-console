@@ -25,6 +25,14 @@ class Api {
             session,
         })
     }
+
+    async makeRequest(stringRequest, sessionId) {
+        const requestObj = JSON.parse(stringRequest)
+        requestObj.session = sessionId
+        const res = await sendsay.request(requestObj)
+
+        return res
+    }
 }
 
 export default new Api()

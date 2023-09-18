@@ -1,12 +1,12 @@
 import React from 'react'
 import cl from './Wrapper.module.scss'
 
-const Wrapper = ({ children }) => {
+const Wrapper = ({ children, ...props }) => {
     return (
-        <>
+        <div {...props}>
             <div className={cl.wrapper}>{children}</div>
             <div className={cl.dividingLine}></div>
-        </>
+        </div>
     )
 }
 

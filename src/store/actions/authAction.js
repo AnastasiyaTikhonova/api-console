@@ -65,7 +65,7 @@ export const checkAuth = () => async (dispatch) => {
             }
         }
     } catch (e) {
-        console.error(e)
+        console.log(e)
         STORAGE.removeProps(LS_KEYS.SESSION_ID)
         STORAGE.removeProps(LS_KEYS.LOGIN_VALUE)
         STORAGE.removeProps(LS_KEYS.SUBLOGIN_VALUE)

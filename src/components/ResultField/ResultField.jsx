@@ -1,11 +1,19 @@
 import React from 'react'
 import cl from './ResultField.module.scss'
+import cn from 'classnames'
 
-const ResultField = () => {
+const ResultField = ({ answer, validAnswer }) => {
     return (
-        <div className={cl.requestField}>
+        <div
+            className={cn(cl.resultField, !validAnswer && cl.resultFieldError)}
+        >
             <label className={cl.label}>Ответ:</label>
-            <textarea name="Запрос" className={cl.textArea}></textarea>
+            <textarea
+                name="Запрос"
+                className={cl.textArea}
+                value={answer}
+                readOnly
+            />
         </div>
     )
 }

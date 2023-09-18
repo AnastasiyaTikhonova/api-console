@@ -2,12 +2,14 @@ import React, { useRef } from 'react'
 import HistoryElement from '../../components/HistoryElement'
 import cl from './HistoryTrack.module.scss'
 import { ExitLogo } from '../../icons/ExitLogo/ExitLogo'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { getHistoryItems } from '../../store/selectors'
+import { deleteAllHistory } from '../../store/actions/consoleAction'
 
-const HistoryTrack = () => {
+const HistoryTrack = ({ repeateItem }) => {
     const historyItems = useSelector(getHistoryItems)
     const ref = useRef()
+    const dispatch = useDispatch()
 
     const horizontalScroll = (e) => {
         const _this = ref.current
@@ -27,6 +29,10 @@ const HistoryTrack = () => {
         }
     }
 
+    const deleteHistory = () => {
+        dispatch(deleteAllHistory())
+    }
+
     return (
         <>
             <div className={cl.history}>
@@ -41,11 +47,14 @@ const HistoryTrack = () => {
                                 key={item.id}
                                 status={item.status}
                                 name={item.name}
+                                id={item.id}
+                                request={item.requestString}
+                                repeate={repeateItem}
                             />
                         )
                     })}
                 </div>
-                <div className={cl.exitLogo}>
+                <div className={cl.exitLogo} onClick={() => deleteHistory()}>
                     <ExitLogo />
                 </div>
             </div>
