@@ -21,6 +21,7 @@ const HistoryElement = ({ status, name, id, repeate, request }) => {
     const elementCopied = () => {
         navigator.clipboard.writeText(request)
         setIsCopied(true)
+        setTimeout(() => setIsCopied(false), 1500)
         //itemRef.style.cssText = "top: -45px; opacity: 0.5;"
     }
 
@@ -30,7 +31,7 @@ const HistoryElement = ({ status, name, id, repeate, request }) => {
             <div className={style.elementNameContainer}>
                 <span className={style.elementName}>{name}</span>
                 {isCopied ? (
-                    <div ref={itemRef} className={style.elementCopied}>
+                    <div ref={itemRef} className={cn(style.elementCopied, !isCopied && style.elementHidden)}>
                         Скопировано
                     </div>
                 ) : null}

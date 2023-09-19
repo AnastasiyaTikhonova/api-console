@@ -98,8 +98,10 @@ const Console = () => {
     }
 
     const correctFormat = () => {
-        const correctRequest = JSON.stringify(JSON.parse(request), null, 2)
-        setRequest(correctRequest)
+        if (request) {
+            const correctRequest = JSON.stringify(JSON.parse(request), null, 2)
+            setRequest(correctRequest)
+        }
     }
 
     return (

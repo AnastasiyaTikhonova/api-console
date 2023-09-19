@@ -66,8 +66,15 @@
 	.imgChangeScreenSize {
 		width: 18px;
 		height: 18px;
-		margin: 16px 15px 16px 0px;
+		margin: 16px 15px 16px 0;
 		cursor: pointer;
+		&:hover {
+			color: #0055FB;
+			path {
+				stroke: #0055FB;
+			}
+
+		}
 	}
 }
 .dividingLine {
