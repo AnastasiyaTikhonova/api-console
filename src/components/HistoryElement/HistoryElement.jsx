@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import style from './HistoryElement.module.scss'
 import { GreenEllipse } from '../../icons/GreenEllipse/GreenEllipse'
@@ -12,7 +12,7 @@ import { deleteHistoryItem } from '../../store/actions/consoleAction'
 const HistoryElement = ({ status, name, id, repeate, request }) => {
     const dispatch = useDispatch()
     const [isCopied, setIsCopied] = useState(false)
-    const itemRef = useRef()
+    const [hiddenFlag, setHiddenFlag] = useState(false)
 
     const deleteItem = () => {
         dispatch(deleteHistoryItem(id))
@@ -21,8 +21,9 @@ const HistoryElement = ({ status, name, id, repeate, request }) => {
     const elementCopied = () => {
         navigator.clipboard.writeText(request)
         setIsCopied(true)
-        setTimeout(() => setIsCopied(false), 1500)
-        //itemRef.style.cssText = "top: -45px; opacity: 0.5;"
+        setTimeout(() => setIsCopied(false), 2500)
+        setTimeout(() => setHiddenFlag(true), 1000)
+        setTimeout(() => setHiddenFlag(false), 2500)
     }
 
     return (
@@ -31,7 +32,12 @@ const HistoryElement = ({ status, name, id, repeate, request }) => {
             <div className={style.elementNameContainer}>
                 <span className={style.elementName}>{name}</span>
                 {isCopied ? (
-                    <div ref={itemRef} className={cn(style.elementCopied, !isCopied && style.elementHidden)}>
+                    <div
+                        className={cn(
+                            style.elementCopied,
+                            hiddenFlag && style.elementHidden
+                        )}
+                    >
                         Скопировано
                     </div>
                 ) : null}

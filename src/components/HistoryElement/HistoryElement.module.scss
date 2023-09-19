@@ -1,5 +1,6 @@
 .historyElement {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 5px 10px;
   background: #FFFFFF;
@@ -7,11 +8,14 @@
   border-radius: 5px;
   height: 30px;
   margin-left: 10px;
+  min-width: 135px;
 
   .elementNameContainer {
     margin-left: 5px;
     margin-right: 7px;
     height: 30px;
+    flex-grow: 1;
+
 
     .elementName {
       font-family: "Fira Sans";
@@ -35,8 +39,7 @@
       text-align: center;
       top: -19px;
       transition-property: top, opacity;
-      transition-duration: 2s;
-      transition-delay: 1s;
+      transition-duration: 1.5s;
     }
     .elementHidden {
       top: -45px;
