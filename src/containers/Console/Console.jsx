@@ -48,7 +48,6 @@ const Console = () => {
                         request
                     )
                 )
-                console.log(historyItems)
             } catch (e) {
                 setAnswer(JSON.stringify(e, null, 2))
                 setValidAnswer(false)
@@ -60,13 +59,12 @@ const Console = () => {
                         request
                     )
                 )
-                console.log(historyItems)
             }
         }
     }
 
     const repeateItem = async (itemId) => {
-        const item = historyItems.find((item) => item.id == itemId)
+        const item = historyItems.find((item) => item.id === itemId)
         const itemRequest = item.requestString
         let answerFromServer
         setRequest(itemRequest)

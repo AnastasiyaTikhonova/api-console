@@ -34,7 +34,12 @@ const Header = () => {
                         <Logout />
                     </div>
                 </div>
-                <div className={cl.imgChangeScreenSize}>
+                <div
+                    className={cl.imgChangeScreenSize}
+                    onClick={() =>
+                        document.getElementById('wrapper').requestFullscreen()
+                    }
+                >
                     <ChangeScreenSize />
                 </div>
             </div>
