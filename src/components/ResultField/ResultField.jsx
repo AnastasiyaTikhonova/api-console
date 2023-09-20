@@ -7,19 +7,13 @@ const ResultField = ({
     validAnswer,
     delta,
     resizingInProcess,
-    codePanel,
 }) => {
     const [panelWidth, setPanelWidth] = useState(0)
 
     useEffect(() => {
         if (delta) {
-            if (codePanel === 'right') {
-                document.getElementById('right').width =
-                    panelWidth - delta + 'px'
-            } else {
-                document.getElementById('right').width =
-                    panelWidth + delta + 'px'
-            }
+            document.getElementById('right').style.width =
+                panelWidth + delta + 'px'
         }
     }, [delta])
 

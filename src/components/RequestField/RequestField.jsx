@@ -7,20 +7,14 @@ const RequestField = ({
     request,
     jsonValid,
     delta,
-    codePanel,
     resizingInProcess,
 }) => {
     const [panelWidth, setPanelWidth] = useState(0)
 
     useEffect(() => {
         if (delta) {
-            if (codePanel === 'left') {
-                document.getElementById('left').width =
-                    panelWidth - delta + 'px'
-            } else {
-                document.getElementById('left').width =
-                    panelWidth + delta + 'px'
-            }
+            document.getElementById('left').style.width =
+                panelWidth - delta + 'px'
         }
     }, [delta])
 

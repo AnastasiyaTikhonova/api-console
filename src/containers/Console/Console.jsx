@@ -107,7 +107,6 @@ const Console = () => {
     const resizeHandler = (e) => {
         const startResizeCoords = e.pageX
         setResizingInProcess(true)
-
         document.onmousemove = (e) => {
             const delta = startResizeCoords - e.pageX
             setDelta(delta)
@@ -130,7 +129,6 @@ const Console = () => {
                     request={request}
                     jsonValid={jsonValid}
                     delta={delta}
-                    codePanel="left"
                     resizingInProcess={resizingInProcess}
                 />
                 <div className={cl.dragElement}>
@@ -140,7 +138,6 @@ const Console = () => {
                     answer={answer}
                     validAnswer={validAnswer}
                     delta={delta}
-                    codePanel="right"
                     resizingInProcess={resizingInProcess}
                 />
             </Wrapper>
