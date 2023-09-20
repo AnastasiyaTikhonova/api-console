@@ -21,6 +21,8 @@ const Console = () => {
     const sessionId = useSelector(getSessionId)
     const historyItems = useSelector(getHistoryItems)
     const dispatch = useDispatch()
+    const [resizingInProcess, setResizingInProcess] = useState(false)
+    const [delta, setDelta] = useState(0)
 
     const validateRequest = () => {
         try {
@@ -102,6 +104,22 @@ const Console = () => {
         }
     }
 
+    const resizeHandler = (e) => {
+        const startResizeCoords = e.pageX
+        setResizingInProcess(true)
+
+        document.onmousemove = (e) => {
+            const delta = startResizeCoords - e.pageX
+            setDelta(delta)
+        }
+
+        document.onmouseup = () => {
+            setResizingInProcess(false)
+            document.onmousemove = null
+            document.onmouseup = null
+        }
+    }
+
     return (
         <div className={cl.consoleWrapper}>
             <Header />
@@ -111,11 +129,20 @@ const Console = () => {
                     setRequestField={setRequest}
                     request={request}
                     jsonValid={jsonValid}
+                    delta={delta}
+                    codePanel="left"
+                    resizingInProcess={resizingInProcess}
                 />
                 <div className={cl.dragElement}>
-                    <DragElement />
+                    <DragElement resize={resizeHandler} />
                 </div>
-                <ResultField answer={answer} validAnswer={validAnswer} />
+                <ResultField
+                    answer={answer}
+                    validAnswer={validAnswer}
+                    delta={delta}
+                    codePanel="right"
+                    resizingInProcess={resizingInProcess}
+                />
             </Wrapper>
             <Footer onSend={onClickSendHandler} correctFormat={correctFormat} />
         </div>

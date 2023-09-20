@@ -1,7 +1,8 @@
 import React from 'react'
 
-export const DragElement = () => (
+export const DragElement = ({ resize }) => (
     <svg
+        onMouseDown={resize}
         width="4"
         height="18"
         viewBox="0 0 4 18"
