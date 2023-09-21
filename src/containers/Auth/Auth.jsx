@@ -21,7 +21,7 @@ const Auth = () => {
     const [errorExplain, setErrorExplain] = useState('')
     const isLoading = useSelector(getLoadingStatus)
     const dispatch = useDispatch()
-
+    
     const setProps = (value, name) => {
         setError(false)
         if (name === 'password') {
@@ -38,6 +38,7 @@ const Auth = () => {
             setValidLogin(true)
         }
     }
+
     const validateLogin = (login) => {
         const regEmail =
             /^([A-Za-zА-Яа-я0-9_\-.])+@([A-Za-zА-Яа-я0-9_\-.])+\.([A-Za-zА-Яа-я]{2,4})$/
@@ -45,6 +46,7 @@ const Auth = () => {
 
         return regLogin.test(login) || regEmail.test(login)
     }
+
     const validatePassword = (password) => {
         const regPass = /^[a-zA-Z0-9]+$/
 

@@ -2,6 +2,7 @@
   display: inline-block;
   width: 50%;
   flex-direction: column;
+
   .label {
     font-family: "Fira Sans";
     font-style: normal;
@@ -16,7 +17,7 @@
     font-family: "Fira Code";
     box-sizing: border-box;
     width: 100%;
-    height: calc(100% - 20px);
+    height: calc(100% - 35px);
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     outline: none;

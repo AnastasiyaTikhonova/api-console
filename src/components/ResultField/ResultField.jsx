@@ -2,12 +2,7 @@ import React, { useEffect, useState } from 'react'
 import cl from './ResultField.module.scss'
 import cn from 'classnames'
 
-const ResultField = ({
-    answer,
-    validAnswer,
-    delta,
-    resizingInProcess,
-}) => {
+const ResultField = ({ answer, validAnswer, delta, resizingInProcess }) => {
     const [panelWidth, setPanelWidth] = useState(0)
 
     useEffect(() => {
